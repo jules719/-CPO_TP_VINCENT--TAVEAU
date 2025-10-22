@@ -17,17 +17,35 @@ public class TP1_manipNombre_julesvt {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.print ("Entrez le premier entier");
+ 
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Entrez le premier entier : ");
         int a = scanner.nextInt();
         System.out.print("Entrez le deuxième entier : ");
         int b = scanner.nextInt();
         System.out.println("\nVous avez saisi : a = " + a + " et b = " + b);
+
         int somme = a + b;
         int difference = a - b;
         int produit = a * b;
-       
-        
+
+        System.out.println("\nRésultats des opérations :");
+        System.out.println("Somme : " + somme);
+        System.out.println("Différence : " + difference);
+        System.out.println("Produit : " + produit);
+
+        // 3. Quotient entier et reste de la division euclidienne
+        if (b != 0) {
+            int quotient = a / b;
+            int reste = a % b;
+            System.out.println("Quotient entier (a / b) : " + quotient);
+            System.out.println("Reste de la division euclidienne (a % b) : " + reste);
+        } else {
+            System.out.println("Division par zéro impossible !");
+        }
+
+        // Fermeture du scanner
+        scanner.close();
     }
-    
-    
-}
+}    
