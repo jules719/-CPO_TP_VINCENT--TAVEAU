@@ -15,6 +15,7 @@ public class PremierProjetSurGitHub {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        System.out.println ("moustik est moche");
     }
     
 }
