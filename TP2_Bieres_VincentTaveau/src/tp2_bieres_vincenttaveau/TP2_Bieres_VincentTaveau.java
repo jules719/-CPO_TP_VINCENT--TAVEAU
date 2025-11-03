@@ -14,7 +14,17 @@ public class TP2_Bieres_VincentTaveau {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    BouteilleBiere uneBiere = new BouteilleBiere() ;
+    uneBiere.nom = "Cuvée des trolls"; 
+    uneBiere.degreAlcool = 7.0 ; 
+    uneBiere.brasserie = "Dubuisson" ; 
+    uneBiere.Ouverte = false ; 
+    uneBiere.lireEtiquette();  
+    
+    uneBiere.nom = "Leffe" ;     
+    uneBiere.degreAlcool = 7.0 ;
+    uneBiere.brasserie = "Abbaye de Leffe" ; 
+    uneBiere.lireEtiquette(); 
     }
     
 }
