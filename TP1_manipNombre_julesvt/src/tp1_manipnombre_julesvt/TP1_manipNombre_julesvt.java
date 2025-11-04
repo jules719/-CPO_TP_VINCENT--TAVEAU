@@ -35,7 +35,7 @@ public class TP1_manipNombre_julesvt {
         System.out.println("Différence : " + difference);
         System.out.println("Produit : " + produit);
 
-        // 3. Quotient entier et reste de la division euclidienne
+        
         if (b != 0) {
             int quotient = a / b;
             int reste = a % b;
@@ -45,7 +45,7 @@ public class TP1_manipNombre_julesvt {
             System.out.println("Division par zéro impossible !");
         }
 
-        // Fermeture du scanner
+       
         scanner.close();
     }
 }    
