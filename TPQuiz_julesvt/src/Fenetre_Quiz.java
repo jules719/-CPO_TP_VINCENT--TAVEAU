@@ -26,7 +26,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
      */
     public Fenetre_Quiz() {
         initComponents();
-
+        questions = new ArrayList<>();
     // Création des questions
     questions.add(new Question(
             "Qui se dort dessus depuis le debut de l'année ?",
@@ -70,7 +70,8 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
 }
     private void verifierReponse(int choix) {
 
-    Question q = Question.get(indexQuestionCourante);
+    Question q = questions.get(indexQuestionCourante);
+
 
     if (choix == q.getIndexBonneReponse()) {
         lblFeedback.setText("Bonne réponse !");
@@ -112,7 +113,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblQuestion.setText("question");
-        getContentPane().add(lblQuestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(177, 58, -1, -1));
+        getContentPane().add(lblQuestion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 350, -1));
 
         lblScore.setText("score");
         getContentPane().add(lblScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 94, -1));
@@ -131,7 +132,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                 btnRep2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRep2, new org.netbeans.lib.awtextra.AbsoluteConstraints(148, 152, -1, -1));
+        getContentPane().add(btnRep2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
         btnRep3.setText("rep3");
         btnRep3.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +140,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                 btnRep3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRep3, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 152, -1, -1));
+        getContentPane().add(btnRep3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, -1, -1));
 
         btnRep4.setText("rep4");
         btnRep4.addActionListener(new java.awt.event.ActionListener() {
@@ -147,7 +148,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
                 btnRep4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 152, -1, -1));
+        getContentPane().add(btnRep4, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 150, -1, -1));
 
         btnSuivante.setText("question suivante");
         btnSuivante.addActionListener(new java.awt.event.ActionListener() {
@@ -169,8 +170,9 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     private void btnSuivanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuivanteActionPerformed
          indexQuestionCourante++;
 
-    if (indexQuestionCourante < Question.size()) {
-        afficherQuestionCourante();
+    if (indexQuestionCourante < questions.size()) {
+    afficherQuestionCourante();
+
     } else {
           lblFeedback.setText("Quiz terminé ! Score final : " + score + " / " + Question.size());
           lblQuestion.setText("quiz fini");
