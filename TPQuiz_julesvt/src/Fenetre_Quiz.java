@@ -46,7 +46,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
 
     questions.add(new Question(
             "Le meilleur snack de montpellier ?",
-            "Sun", "Roonys", "Raffine", "Intermarche clemencau", 4));
+            "Sun", "Roonys", "Raffine", "Intermarche clemencau", 1));
 
     afficherQuestionCourante(); }
     
