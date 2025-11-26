@@ -174,7 +174,7 @@ public class Fenetre_Quiz extends javax.swing.JFrame {
     afficherQuestionCourante();
 
     } else {
-          lblFeedback.setText("Quiz terminé ! Score final : " + score + " / " + Question.size());
+          lblFeedback.setText("Quiz terminé ! Score final : " + score + " / " + questions.size());
           lblQuestion.setText("quiz fini");
         btnSuivante.setEnabled(false);
     }
