@@ -53,18 +53,18 @@ public class master_mind extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        bouton_recommencer = new javax.swing.JButton();
         texte_tentatives = new javax.swing.JLabel();
         texte_intro = new javax.swing.JLabel();
         up_chiffre1 = new javax.swing.JButton();
         up_chiffre2 = new javax.swing.JButton();
         up_chiffre3 = new javax.swing.JButton();
+        texte_chiffre2 = new javax.swing.JLabel();
+        texte_chiffre1 = new javax.swing.JLabel();
         up_chiffre4 = new javax.swing.JButton();
         texte_chiffre0 = new javax.swing.JLabel();
-        texte_chiffre1 = new javax.swing.JLabel();
-        texte_chiffre2 = new javax.swing.JLabel();
         texte_chiffre3 = new javax.swing.JLabel();
         down_chiffre1 = new javax.swing.JButton();
+        bouton_recommencer = new javax.swing.JButton();
         down_chiffre2 = new javax.swing.JButton();
         down_chiffre3 = new javax.swing.JButton();
         down_chiffre4 = new javax.swing.JButton();
@@ -78,17 +78,10 @@ public class master_mind extends javax.swing.JFrame {
         texte_score = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        bouton_recommencer.setText("recommencer");
-        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bouton_recommencerActionPerformed(evt);
-            }
-        });
-        jPanel1.add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
         texte_tentatives.setText("Tentatives");
         jPanel1.add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 100, 20));
@@ -120,6 +113,14 @@ public class master_mind extends javax.swing.JFrame {
                     });
                     jPanel1.add(up_chiffre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 60, -1));
 
+                    texte_chiffre2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                    texte_chiffre2.setText("0");
+                    jPanel1.add(texte_chiffre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 37, -1));
+
+                    texte_chiffre1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                    texte_chiffre1.setText("0");
+                    jPanel1.add(texte_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 37, -1));
+
                     up_chiffre4.setText("/\\");
                         up_chiffre4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,14 +133,6 @@ public class master_mind extends javax.swing.JFrame {
                         texte_chiffre0.setText("0");
                         jPanel1.add(texte_chiffre0, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 37, -1));
 
-                        texte_chiffre1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-                        texte_chiffre1.setText("0");
-                        jPanel1.add(texte_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 37, -1));
-
-                        texte_chiffre2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-                        texte_chiffre2.setText("0");
-                        jPanel1.add(texte_chiffre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 37, -1));
-
                         texte_chiffre3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
                         texte_chiffre3.setText("0");
                         jPanel1.add(texte_chiffre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 20, -1));
@@ -151,6 +144,17 @@ public class master_mind extends javax.swing.JFrame {
                             }
                         });
                         jPanel1.add(down_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 60, -1));
+
+                        bouton_recommencer.setText("recommencer");
+                        bouton_recommencer.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
+                        bouton_recommencer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+                        bouton_recommencer.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+                        bouton_recommencer.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                bouton_recommencerActionPerformed(evt);
+                            }
+                        });
+                        jPanel1.add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
                         down_chiffre2.setText("\\/");
                         down_chiffre2.addActionListener(new java.awt.event.ActionListener() {
@@ -205,7 +209,7 @@ public class master_mind extends javax.swing.JFrame {
                         texte_score.setText("0 sur 10 ");
                         jPanel1.add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 100, -1));
 
-                        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+                        getContentPane().add(jPanel1, new java.awt.GridBagConstraints());
 
                         pack();
                     }// </editor-fold>//GEN-END:initComponents
