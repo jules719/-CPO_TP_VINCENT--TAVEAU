@@ -22,8 +22,8 @@ public class master_mind extends javax.swing.JFrame {
         jeu = new jeucadenas();
     }    
     private void initialiserInterface() {
-    texte_intro.setText("Devinez la combinaison !");
-    texte_score.setText("Tentatives : 0");
+    texte_intro.setText("Trouvez le code !");
+    texte_score.setText("0 sur 10");
 
     // valeurs affichées pour les 4 chiffres
     texte_chiffre0.setText("" + saisie[0]);
@@ -80,7 +80,7 @@ public class master_mind extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         texte_intro.setText("trouver le code ");
-        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 120, -1));
+        getContentPane().add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 250, -1));
 
         up_chiffre1.setText("/\\");
             up_chiffre1.addActionListener(new java.awt.event.ActionListener() {
@@ -252,25 +252,30 @@ public class master_mind extends javax.swing.JFrame {
     }//GEN-LAST:event_down_chiffre4ActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
-       if (jeu.getNbTentatives() >= 10) { // limite à 10 tentatives
+                                             
+    if (jeu.getNbTentatives() >= 10) {
         texte_intro.setText("Partie terminée !");
         bouton_tester.setEnabled(false);
         return;
     }
 
-    int[] resultat = jeu.verifier(saisie);
+    int[] resultat = jeu.verifier(saisie); // incrémente le compteur
 
     texte_nb_chiffres_exacts.setText("" + resultat[0]);
     texte_nb_chiffres_haut.setText("" + resultat[1]);
     texte_nb_chiffres_bas.setText("" + resultat[2]);
 
-    // Met à jour le label avec le format "X sur 10"
-    texte_score.setText(jeu.getNbTentatives() + " sur 10");
+    // Affiche le compteur après incrémentation, mais limite à 10
+    int tentativesAffiche = Math.min(jeu.getNbTentatives(), 10);
+    texte_score.setText(tentativesAffiche + " sur 10");
 
     if (jeu.isGagne()) {
         texte_intro.setText("Bravo, vous avez trouvé !");
         bouton_tester.setEnabled(false);
     }
+
+
+
 
  // TODO add your handling code here:
     }//GEN-LAST:event_bouton_testerActionPerformed
