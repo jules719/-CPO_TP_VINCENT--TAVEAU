@@ -300,25 +300,23 @@ public class master_mind extends javax.swing.JFrame {
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
                                              
-    if (jeu.getNbTentatives() >= 10) {
-        texte_intro.setText("Partie terminée !");
-        bouton_tester.setEnabled(false);
-        return;
-    }
-
-    int[] resultat = jeu.verifier(saisie); // incrémente le compteur
+   int[] resultat = jeu.verifier(saisie);
 
     texte_nb_chiffres_exacts.setText("" + resultat[0]);
     texte_nb_chiffres_haut.setText("" + resultat[1]);
     texte_nb_chiffres_bas.setText("" + resultat[2]);
 
-    // Affiche le compteur après incrémentation, mais limite à 10
     int tentativesAffiche = Math.min(jeu.getNbTentatives(), 10);
     texte_score.setText(tentativesAffiche + " sur 10");
 
     if (jeu.isGagne()) {
         texte_intro.setText("Bravo, vous avez trouvé !");
-        bouton_tester.setEnabled(false);
+    }
+
+    // Affiche la fenêtre de fin si gagné ou 10 tentatives
+    if (jeu.isGagne() || jeu.getNbTentatives() >= 10) {
+        new Fin().setVisible(true);
+        this.dispose();
     }
 
 

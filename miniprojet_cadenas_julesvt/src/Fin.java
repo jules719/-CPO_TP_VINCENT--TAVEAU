@@ -58,18 +58,22 @@ public class Fin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 51));
         jLabel1.setText("Fin de Partie ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 240, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 240, -1));
 
+        Rejouer.setBackground(new java.awt.Color(0, 0, 204));
+        Rejouer.setForeground(new java.awt.Color(255, 255, 51));
         Rejouer.setText("Rejouer ");
-        jPanel1.add(Rejouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
+        jPanel1.add(Rejouer, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 100, 40));
 
-        Quitter.setText("jButton2");
+        Quitter.setBackground(new java.awt.Color(0, 0, 204));
+        Quitter.setForeground(new java.awt.Color(255, 255, 51));
+        Quitter.setText("Quitter");
         Quitter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 QuitterActionPerformed(evt);
             }
         });
-        jPanel1.add(Quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, -1, -1));
+        jPanel1.add(Quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 210, 100, 40));
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
