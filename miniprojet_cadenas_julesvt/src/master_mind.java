@@ -12,15 +12,21 @@ public class master_mind extends javax.swing.JFrame {
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(master_mind.class.getName());
     private jeucadenas jeu = new jeucadenas();
     private int[] saisie = {0, 0, 0, 0};
-
+    
     /**
      * Creates new form master_mind
      */
+    
+    
     public master_mind() {
         initComponents();
         initialiserInterface();
-        jeu = new jeucadenas();
+                jeu = new jeucadenas();
     }    
+
+    
+    
+    
     private void initialiserInterface() {
     texte_intro.setText("Trouvez le code !");
     texte_score.setText("0 sur 10");
@@ -31,9 +37,9 @@ public class master_mind extends javax.swing.JFrame {
     texte_chiffre2.setText("" + saisie[2]);
     texte_chiffre3.setText("" + saisie[3]);
 
-    texte_lbl_nb_chiffres_exacts.setText("Chiffres exacts :");
-    texte_lbl_nb_chiffres_haut.setText("Trop hauts :");
-    texte_lbl_nb_chiffres_bas.setText("Trop bas :");
+    texte_lbl_nb_chiffres_exacts.setText("nombre de chiffres exacts :");
+    texte_lbl_nb_chiffres_haut.setText("nombre de chiffres trop hauts :");
+    texte_lbl_nb_chiffres_bas.setText("nombre de chiffre trop bas :");
 
     texte_nb_chiffres_exacts.setText("0");
     texte_nb_chiffres_haut.setText("0");
@@ -80,15 +86,20 @@ public class master_mind extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        texte_tentatives.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        texte_tentatives.setForeground(new java.awt.Color(255, 255, 51));
         texte_tentatives.setText("Tentatives");
-        jPanel1.add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 100, 20));
+        jPanel1.add(texte_tentatives, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 110, 20));
 
+        texte_intro.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        texte_intro.setForeground(new java.awt.Color(255, 255, 51));
         texte_intro.setText("trouver le code ");
-        jPanel1.add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 40, 250, -1));
+        jPanel1.add(texte_intro, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 250, -1));
 
+        up_chiffre1.setBackground(new java.awt.Color(255, 255, 51));
         up_chiffre1.setText("/\\");
             up_chiffre1.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +108,7 @@ public class master_mind extends javax.swing.JFrame {
             });
             jPanel1.add(up_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 90, 60, -1));
 
+            up_chiffre2.setBackground(new java.awt.Color(255, 255, 51));
             up_chiffre2.setText("/\\");
                 up_chiffre2.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +117,7 @@ public class master_mind extends javax.swing.JFrame {
                 });
                 jPanel1.add(up_chiffre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 60, -1));
 
+                up_chiffre3.setBackground(new java.awt.Color(255, 255, 51));
                 up_chiffre3.setText("/\\");
                     up_chiffre3.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,13 +127,16 @@ public class master_mind extends javax.swing.JFrame {
                     jPanel1.add(up_chiffre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 90, 60, -1));
 
                     texte_chiffre2.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                    texte_chiffre2.setForeground(new java.awt.Color(255, 255, 51));
                     texte_chiffre2.setText("0");
                     jPanel1.add(texte_chiffre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, 37, -1));
 
                     texte_chiffre1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                    texte_chiffre1.setForeground(new java.awt.Color(255, 255, 102));
                     texte_chiffre1.setText("0");
                     jPanel1.add(texte_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 37, -1));
 
+                    up_chiffre4.setBackground(new java.awt.Color(255, 255, 51));
                     up_chiffre4.setText("/\\");
                         up_chiffre4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,13 +146,16 @@ public class master_mind extends javax.swing.JFrame {
                         jPanel1.add(up_chiffre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 60, -1));
 
                         texte_chiffre0.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                        texte_chiffre0.setForeground(new java.awt.Color(255, 255, 0));
                         texte_chiffre0.setText("0");
                         jPanel1.add(texte_chiffre0, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 37, -1));
 
                         texte_chiffre3.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+                        texte_chiffre3.setForeground(new java.awt.Color(255, 255, 51));
                         texte_chiffre3.setText("0");
                         jPanel1.add(texte_chiffre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 120, 20, -1));
 
+                        down_chiffre1.setBackground(new java.awt.Color(255, 255, 51));
                         down_chiffre1.setText("\\/");
                         down_chiffre1.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +164,7 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(down_chiffre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 60, -1));
 
+                        bouton_recommencer.setBackground(new java.awt.Color(255, 255, 51));
                         bouton_recommencer.setText("recommencer");
                         bouton_recommencer.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
                         bouton_recommencer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -156,6 +176,7 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(bouton_recommencer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, -1, -1));
 
+                        down_chiffre2.setBackground(new java.awt.Color(255, 255, 51));
                         down_chiffre2.setText("\\/");
                         down_chiffre2.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,6 +185,7 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(down_chiffre2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 60, -1));
 
+                        down_chiffre3.setBackground(new java.awt.Color(255, 255, 102));
                         down_chiffre3.setText("\\/");
                         down_chiffre3.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,6 +194,7 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(down_chiffre3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 160, 60, -1));
 
+                        down_chiffre4.setBackground(new java.awt.Color(255, 255, 51));
                         down_chiffre4.setText("\\/");
                         down_chiffre4.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +203,7 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(down_chiffre4, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 160, 60, -1));
 
+                        bouton_tester.setBackground(new java.awt.Color(255, 255, 51));
                         bouton_tester.setText("Tester");
                         bouton_tester.addActionListener(new java.awt.event.ActionListener() {
                             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,26 +212,40 @@ public class master_mind extends javax.swing.JFrame {
                         });
                         jPanel1.add(bouton_tester, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, -1, -1));
 
-                        texte_lbl_nb_chiffres_exacts.setText("nombres de chiffres exactes :");
-                        jPanel1.add(texte_lbl_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 250, -1));
+                        texte_lbl_nb_chiffres_exacts.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_lbl_nb_chiffres_exacts.setForeground(new java.awt.Color(255, 255, 51));
+                        texte_lbl_nb_chiffres_exacts.setText("nombres de chiffres exactes  :");
+                        jPanel1.add(texte_lbl_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 250, -1));
 
+                        texte_nb_chiffres_exacts.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_nb_chiffres_exacts.setForeground(new java.awt.Color(255, 255, 51));
                         texte_nb_chiffres_exacts.setText("0");
                         jPanel1.add(texte_nb_chiffres_exacts, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 37, 20));
 
+                        texte_lbl_nb_chiffres_haut.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_lbl_nb_chiffres_haut.setForeground(new java.awt.Color(255, 255, 51));
                         texte_lbl_nb_chiffres_haut.setText("nombre de chiffres trop haut : ");
-                        jPanel1.add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 310, -1));
+                        jPanel1.add(texte_lbl_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 260, -1));
 
+                        texte_nb_chiffres_haut.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_nb_chiffres_haut.setForeground(new java.awt.Color(255, 255, 51));
                         texte_nb_chiffres_haut.setText("0");
                         jPanel1.add(texte_nb_chiffres_haut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 37, 20));
 
+                        texte_lbl_nb_chiffres_bas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_lbl_nb_chiffres_bas.setForeground(new java.awt.Color(255, 255, 51));
                         texte_lbl_nb_chiffres_bas.setText("nombre de chiffre trop bas : ");
-                        jPanel1.add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, 330, -1));
+                        jPanel1.add(texte_lbl_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 240, -1));
 
+                        texte_nb_chiffres_bas.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_nb_chiffres_bas.setForeground(new java.awt.Color(255, 255, 51));
                         texte_nb_chiffres_bas.setText("0");
                         jPanel1.add(texte_nb_chiffres_bas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, 160, -1));
 
+                        texte_score.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+                        texte_score.setForeground(new java.awt.Color(255, 255, 51));
                         texte_score.setText("0 sur 10 ");
-                        jPanel1.add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 100, -1));
+                        jPanel1.add(texte_score, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 100, -1));
 
                         getContentPane().add(jPanel1, new java.awt.GridBagConstraints());
 
